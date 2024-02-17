@@ -4,9 +4,7 @@ const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
-const questions = [
-
-];
+const questions = [];
 
 // function to write README file
 function writeToFile(fileName, data) {}
