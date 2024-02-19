@@ -1,14 +1,29 @@
 // function to generate markdown for README
-function generateMarkdown(data) {
+const licenseLinks = {
+    'MIT': `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`,
+    'GPL': 'http://perso.crans.org/besson/LICENSE.html',
+    'CC--0': 'https://creativecommons.org/licenses/by-nd/4.0',
+    'ODbL': `[![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)](https://opendatacommons.org/licenses/pddl/)`
+};
+
+
+const licenseBadge = (license) => {
+    return license ? licenseLinks[license] : '';
+}
+const licenses = (license) => {
+    return `${license}`
+}
+var generateMarkdown = (data) => {
     return `# ${data.title}
 
-  
+    ${licenseBadge(data.license)}
+
   ## Table of Contents
   
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Licenses](#licenses)
+  * [Licenses](#license)
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
@@ -23,7 +38,7 @@ function generateMarkdown(data) {
   ${data.usage}
 
   ## License
-  ${data.license}
+  ${licenses(data.license)}
 
   ## Contributing
   ${data.contributing}
@@ -32,7 +47,9 @@ function generateMarkdown(data) {
   ${data.tests}
 
   ## Questions
-  ${data.questions}
+  If you have some questions, please use the following contact options!
+  * GitHub user name:[${data.userName}](https://www.github.com/${data.userName})
+  * Contact Email: [${data.email}](mailto:${data.email})
 `;
 }
 
