@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
+const chalk = require('chalk');
 const generateMarkdown = require("./utils/generateMarkdown");
 
 
@@ -26,7 +27,7 @@ const questions = [{
         type: 'list',
         name: 'license',
         message: 'What license would you like to include?',
-        choices: ['MIT', 'GPL', 'CC--0', 'ODbL'],
+        choices: ['MIT', 'MPL 2.0', 'PDDL', 'ODbL'],
     },
     {
         type: 'input',
