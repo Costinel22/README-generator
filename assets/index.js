@@ -52,11 +52,14 @@ const questions = [{
 
 // function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, generateMarkdown(data), function(error) {
+    // specify your directory wher the readme to be created
+    const directoryPath = path.join(__dirname, '/');
+    const filePath = path.join(directoryPath, fileName);
+    fs.writeFile(filePath, generateMarkdown(data), function(error) {
         if (error) {
             return console.log(error);
         }
-        console.log("Now you hawe a nice readme!");
+        console.log("Now you have a nice readme!");
     });
 }
 
