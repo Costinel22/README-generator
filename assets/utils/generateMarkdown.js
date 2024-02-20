@@ -1,11 +1,10 @@
 // function to generate markdown for README
 const licenseLinks = {
-    'MIT': "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
-    'MPL 2.0': "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)",
-    'PDDL': "[![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)](https://opendatacommons.org/licenses/pddl/)",
-    'ODbl': "[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)",
+    'MIT': 'https://lbesson.mit-license.org/',
+    'MPL 2.0': 'https://opensource.org/licenses/MPL-2.0/',
+    'ODC BY': `https://opendatacommons.org/licenses/by/`,
+    'ODbl': "https://opendatacommons.org/licenses/odbl/",
 };
-
 const licenseBadge = (license) => {
     return license ? licenseLinks[license] : '';
 }
@@ -16,9 +15,8 @@ var generateMarkdown = (data) => {
     return `# ${data.title}
 
     ${licenseBadge(data.license)}
+## Table of Contents
 
-  ## Table of Contents
-  
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
@@ -27,26 +25,27 @@ var generateMarkdown = (data) => {
   * [Tests](#tests)
   * [Questions](#questions)
 
-  ## Description
-  ${data.description}
+## Description
+${data.description}
 
-  ## Installation
-  ${data.installation}
+## Installation
+${data.installation}
 
-  ## Usage
-  ${data.usage}
+## Usage
+${data.usage}
 
-  ## License
-  ${licenses(data.license)}
+## License
+${licenses(data.license)}
 
-  ## Contributing
-  ${data.contributing}
+## Contributing
+${data.contributing}
 
-  ## Tests
-  ${data.tests}
+## Tests
+${data.tests}
 
-  ## Questions
-  If you have some questions, please use the following contact options!
+## Questions
+If you have some questions, please use the following contact options!
+
   * GitHub user name:[${data.userName}](https://www.github.com/${data.userName})
   * Contact Email: [${data.email}](mailto:${data.email})
 `;

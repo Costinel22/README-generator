@@ -4,7 +4,6 @@ const inquirer = require("inquirer");
 const chalk = require('chalk');
 const generateMarkdown = require("./utils/generateMarkdown");
 
-
 // array of questions for user
 const questions = [{
         type: 'input',
@@ -26,8 +25,8 @@ const questions = [{
     {
         type: 'list',
         name: 'license',
-        message: 'What license would you like to include?',
-        choices: ['MIT', 'MPL 2.0', 'PDDL', 'ODbL'],
+        message: chalk.red('What license would you like to include?'),
+        choices: ['MIT', 'MPL 2.0', 'ODC BY', 'ODbL'],
     },
     {
         type: 'input',
@@ -36,7 +35,7 @@ const questions = [{
     }, {
         type: 'input',
         name: 'tests',
-        message: 'Give me some instructions how to use it, for example?',
+        message: 'How to test it if it works?',
     }, {
         type: 'input',
         name: 'userName',
@@ -48,9 +47,6 @@ const questions = [{
         message: 'Wath is you email?',
     },
 ];
-
-
-
 // function to write README file
 function writeToFile(fileName, data) {
     // specify your directory wher the readme to be created
@@ -63,7 +59,6 @@ function writeToFile(fileName, data) {
         console.log("Now you have a nice readme!");
     });
 }
-
 // function to initialize program
 function init() {
     inquirer.prompt(questions)
