@@ -5,6 +5,7 @@ A simple way to create  README file and fill using a terminal
 
 - I did that to create a simple README file and fill using a terminal.
 - I find i easy mode to create a README file using just js, and fill it with the terminal.
+- And lock on images folder to see a new README.md generated.
 
 
 ## Table of Contents (Optional)
