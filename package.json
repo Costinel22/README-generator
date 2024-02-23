@@ -1,5 +1,5 @@
 {
-  "name": "readme-generator-test",
+  "name": "readme-generator",
   "version": "1.0.0",
   "description": "A simple way to create  README file and fill using a terminal",
   "main": "index.js",
